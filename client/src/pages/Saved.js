@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
+import Book from "../components/Book";
 
 function Saved(){
 
@@ -23,8 +24,17 @@ function Saved(){
         <div>
             <h1>Saved Books</h1>
 
+            {books.map(book => (
+                <Book
+                title= {book.title}
+                authors= {book.authors}
+                description = {book.description}
+                image = {book.image}
+                />
+            ))}
         </div>
-    )
+
+)
 }
 
 export default Saved;
