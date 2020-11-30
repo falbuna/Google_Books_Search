@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import Button from "../components/Button";
 import API from "../utils/API";
+import BookTable from "../components/BookTable";
 
 function Search(){
-
+    const[books, setBooks] = useState([]);
     const[bookSearch, setBookSearch] = useState("");
 
     const handleInputChange = event => {
@@ -15,9 +16,10 @@ function Search(){
     const handleFormSubmit = event => {
         event.preventDefault();
         API.search(bookSearch)
-        .then(res => {
-            console.log(res.data)
+        .then(res => { setBooks(res.data.items)
+            console.log(res.data.items)
         })
+        .catch(err => console.log(err));
     } 
 
     return(
@@ -30,7 +32,23 @@ function Search(){
             <Button
                 onClick={handleFormSubmit}
             />
-        </div>
+
+          <div className="lg:col-span-2">
+            {
+            books.map((book, index) => {
+                return(
+                    <BookTable key={index}
+                        title={book.volumeInfo.title}
+                        image={book.volumeInfo.imageLinks.thumbnail}
+                        authors={book.volumeInfo.authors}
+                        description={book.volumeInfo.description}
+                        // link={book.selfLink}
+                    />
+                )
+            })
+            }
+          </div>
+</div>
     )
 }
 
