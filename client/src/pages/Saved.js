@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
-import Book from "../components/Book";
+import SavedBooks from "../components/SavedBooks";
 
 function Saved(){
 
@@ -22,10 +22,9 @@ function Saved(){
     return(
 
         <div>
-            <h1>Saved Books</h1>
 
             {books.map(book => (
-                <Book
+                <SavedBooks
                 title= {book.title}
                 authors= {book.authors}
                 description = {book.description}

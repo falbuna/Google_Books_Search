@@ -1,7 +1,8 @@
 import React from "react";
 
-function BookTable(props){
+function SearchedBooks(props){
     return(
+      
         <ul className="space-y-12 sm:divide-y sm:divide-gray-200 sm:space-y-0 sm:-mt-8 lg:gap-x-8 lg:space-y-0">
             <li className="sm:py-8">
                 <div className="space-y-4 sm:grid sm:grid-cols-3 sm:items-start sm:gap-6 sm:space-y-0">
@@ -40,7 +41,8 @@ function BookTable(props){
                  </div>
             </li>
         </ul>
+        
     )
 }
 
-export default BookTable;
+export default SearchedBooks;

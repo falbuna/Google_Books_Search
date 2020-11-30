@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import Button from "../components/Button";
 import API from "../utils/API";
-import BookTable from "../components/BookTable";
+import SearchedBooks from "../components/SearchedBooks";
 
 function Search(){
     const[books, setBooks] = useState([]);
@@ -24,7 +24,7 @@ function Search(){
 
     return(
 
-        <div>
+    <div>
             <SearchBar
                 value={bookSearch}
                 onChange={handleInputChange}
@@ -33,11 +33,10 @@ function Search(){
                 onClick={handleFormSubmit}
             />
 
-          <div className="lg:col-span-2">
             {
             books.map((book, index) => {
                 return(
-                    <BookTable key={index}
+                    <SearchedBooks key={index}
                         title={book.volumeInfo.title}
                         image={book.volumeInfo.imageLinks.thumbnail}
                         authors={book.volumeInfo.authors}
@@ -47,8 +46,8 @@ function Search(){
                 )
             })
             }
-          </div>
-</div>
+
+    </div>
     )
 }
 
