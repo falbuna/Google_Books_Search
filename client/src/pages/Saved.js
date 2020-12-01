@@ -29,6 +29,7 @@ function Saved(){
                 authors= {book.authors}
                 description = {book.description}
                 image = {book.image}
+                link = {book.link}
                 />
             ))}
         </div>

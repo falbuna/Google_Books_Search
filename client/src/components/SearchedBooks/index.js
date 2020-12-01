@@ -8,14 +8,16 @@ function SearchedBooks(props){
     console.log("I've been clicked!")
     console.log({
         title: props.book.volumeInfo.title,
-        image: props.book.volumeInfo.imageLinks.smallThumbnail,
+        // image: props.book.volumeInfo.imageLinks.thumbnail,
         authors: props.book.volumeInfo.authors,
         description: props.book.volumeInfo.description,
         link: props.book.volumeInfo.previewLink
     })
     API.saveBook({
         title: props.book.volumeInfo.title,
-        image: props.book.volumeInfo.imageLinks.smallThumbnail,
+        image: (props.book.volumeInfo.imageLinks === undefined)
+        ? "https://books.google.com/googlebooks/images/no_cover_thumb.gif"
+        : `${props.book.volumeInfo.imageLinks.thumbnail}`,
         authors: props.book.volumeInfo.authors,
         description: props.book.volumeInfo.description,
         link: props.book.volumeInfo.previewLink
@@ -36,10 +38,10 @@ function SearchedBooks(props){
                   <div className="space-y-4">
                     <div className="text-lg leading-6 font-medium space-y-1">
                       <h3>{props.title}</h3>
-                      <p id={props.index} className="text-indigo-400">{props.authors}</p>
+                      <p className="text-indigo-400">{props.authors}</p>
                     </div>
                     <div className="text-lg">
-                      <p id={props.index} className="text-gray-600">{props.description}</p>
+                      <p className="text-gray-600">{props.description}</p>
                     </div>
                     <ul className="flex space-x-5">
                       <li>
@@ -50,7 +52,7 @@ function SearchedBooks(props){
                         </a>
                       </li>
                       <li>
-                          <button id={props.index} onClick={handleSaveBook} className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                          <button onClick={handleSaveBook} className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                               Save
                           </button>
                       </li>

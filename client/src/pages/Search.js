@@ -23,25 +23,6 @@ function Search(){
         .catch(err => console.log(err));
     } 
 
-    function handleSaveBook(event){
-        event.preventDefault();
-        console.log("I've been clicked!")
-        console.log( event.target.id )
-        console.log(Bookinformation(event.target.id))
-        
-        // API.saveBook({
-        //     title: title,
-        //     image: image,
-        //     authors: authors,
-        //     description: description,
-        //     link: link
-        // })
-    }
-
-    function Bookinformation(event){
-        return(books[event])
-    }
-
     return(
 
     <div>
@@ -63,11 +44,13 @@ function Search(){
                         key={index}
                         index={index}
                         title={book.volumeInfo.title}
-                        image={book.volumeInfo.imageLinks.smallThumbnail}
+                        image={book.volumeInfo.imageLinks === undefined
+                        ? "https://books.google.com/googlebooks/images/no_cover_thumb.gif"
+                        : `${book.volumeInfo.imageLinks.thumbnail}`
+                        }
                         authors={book.volumeInfo.authors}
                         description={book.volumeInfo.description}
                         link={book.volumeInfo.previewLink}
-                        // saveBook={handleSaveBook}
                     />
                 )
             })}
