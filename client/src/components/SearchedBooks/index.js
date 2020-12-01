@@ -1,8 +1,29 @@
 import React from "react";
+import API from "../../utils/API";
+
 
 function SearchedBooks(props){
+
+  function handleSaveBook(){
+    console.log("I've been clicked!")
+    console.log({
+        title: props.book.volumeInfo.title,
+        image: props.book.volumeInfo.imageLinks.smallThumbnail,
+        authors: props.book.volumeInfo.authors,
+        description: props.book.volumeInfo.description,
+        link: props.book.volumeInfo.previewLink
+    })
+    API.saveBook({
+        title: props.book.volumeInfo.title,
+        image: props.book.volumeInfo.imageLinks.smallThumbnail,
+        authors: props.book.volumeInfo.authors,
+        description: props.book.volumeInfo.description,
+        link: props.book.volumeInfo.previewLink
+    })
+}
+
     return(
-      
+  
         <ul className="space-y-12 sm:divide-y sm:divide-gray-200 sm:space-y-0 sm:-mt-8 lg:gap-x-8 lg:space-y-0">
             <li className="sm:py-8">
                 <div className="space-y-4 sm:grid sm:grid-cols-3 sm:items-start sm:gap-6 sm:space-y-0">
@@ -15,25 +36,23 @@ function SearchedBooks(props){
                   <div className="space-y-4">
                     <div className="text-lg leading-6 font-medium space-y-1">
                       <h3>{props.title}</h3>
-                      <p className="text-indigo-400">{props.authors}</p>
+                      <p id={props.index} className="text-indigo-400">{props.authors}</p>
                     </div>
                     <div className="text-lg">
-                      <p className="text-gray-600">{props.description}</p>
+                      <p id={props.index} className="text-gray-600">{props.description}</p>
                     </div>
                     <ul className="flex space-x-5">
                       <li>
                         <a href={props.link}>
-                          <button type="submit" className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                          <button className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                               View
                           </button>
                         </a>
                       </li>
                       <li>
-                        <a href={props.link}>
-                          <button type="submit" className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                          <button id={props.index} onClick={handleSaveBook} className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                               Save
                           </button>
-                        </a>
                       </li>
                     </ul>
                   </div>
@@ -41,7 +60,7 @@ function SearchedBooks(props){
                  </div>
             </li>
         </ul>
-        
+  
     )
 }
 
