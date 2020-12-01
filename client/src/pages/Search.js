@@ -18,7 +18,6 @@ function Search(){
         event.preventDefault();
         API.search(bookSearch)
         .then(res => { setBooks(res.data.items)
-            console.log(res.data.items)
         })
         .catch(err => console.log(err));
     } 

@@ -17,6 +17,12 @@ function Saved(){
         )
         .catch(err => console.log(err));
     };
+
+    function deleteBook(id){
+        API.deleteBook(id)
+        .then(res => loadBooks())
+        .catch(err => console.log(err))
+    }
     
 
     return(
@@ -25,13 +31,17 @@ function Saved(){
 
             {books.map(book => (
                 <SavedBooks
+                book={book}
+                key={book._id}
                 title= {book.title}
                 authors= {book.authors}
                 description = {book.description}
                 image = {book.image}
                 link = {book.link}
+                onClick={() => deleteBook(book._id)}
                 />
             ))}
+
         </div>
 
 )
