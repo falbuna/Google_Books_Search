@@ -26,9 +26,9 @@ function SearchedBooks(props){
                     </div>
                 <div className="sm:col-span-2">
                   <div className="space-y-4">
-                    <div className="text-lg leading-6 font-medium space-y-1">
-                      <h3>{props.title}</h3>
-                      <p className="text-blue-700">{props.authors}</p>
+                    <div className="leading-6 font-medium space-y-1">
+                      <h3  className="text-xl text-bold" >{props.title}</h3>
+                      <p className="text-lg text-blue-700">{props.authors}</p>
                     </div>
                     <div className="text-lg">
                       <p className="text-gray-900">{props.description}</p>
