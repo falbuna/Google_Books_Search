@@ -20,20 +20,29 @@ function Search(){
         .then(res => { setBooks(res.data.items)
         })
         .catch(err => console.log(err));
-    } 
+    }
+
 
     return(
-
     <div>
+    <div className="block p-4 border-4">
             <SearchBar
                 value={bookSearch}
                 onChange={handleInputChange}
             />
-            <Button
+            <Button className="object-center"
                 onClick={handleSearch}
             />
+    </div>
+
+
+    <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
+      <div className="space-y-12 lg:grid lg:grid-cols-1 lg:gap-8 lg:space-y-0">
+        <div className="space-y-5 sm:space-y-4">    
             {!books.length ? (
+                <div className="text-lg leading-6 font-medium space-y-1">
                 <h1 className="text-center">No Books to Display</h1>
+                </div>
             ) : (
             <div>
             {books.map((book, index) => {
@@ -55,6 +64,9 @@ function Search(){
             })}
             </div>
             )}
+    </div>
+    </div>
+    </div>
     </div>
     )
 }

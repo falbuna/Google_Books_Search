@@ -23,11 +23,12 @@ function Saved(){
         .then(res => loadBooks())
         .catch(err => console.log(err))
     }
-    
 
     return(
 
-        <div>
+    <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
+      <div className="space-y-12 lg:grid lg:grid-cols-1 lg:gap-8 lg:space-y-0">
+        <div className="space-y-5 sm:space-y-4">
 
             {books.map(book => (
                 <SavedBooks
@@ -41,8 +42,10 @@ function Saved(){
                 onClick={() => deleteBook(book._id)}
                 />
             ))}
-
+            
         </div>
+      </div>
+    </div>
 
 )
 }
