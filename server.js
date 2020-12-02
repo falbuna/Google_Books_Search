@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://falbuna:ayanami1@cluster0.une49.mongodb.net/googlebooks?retryWrites=true&w=majority",
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks",
 {
   useNewUrlParser: true,
   useFindAndModify: false,
