@@ -28,10 +28,10 @@ function SearchedBooks(props){
                   <div className="space-y-4">
                     <div className="text-lg leading-6 font-medium space-y-1">
                       <h3>{props.title}</h3>
-                      <p className="text-indigo-400">{props.authors}</p>
+                      <p className="text-blue-700">{props.authors}</p>
                     </div>
                     <div className="text-lg">
-                      <p className="text-gray-600">{props.description}</p>
+                      <p className="text-gray-900">{props.description}</p>
                     </div>
                     <ul className="flex space-x-5">
                       <li>

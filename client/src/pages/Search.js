@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import SearchBar from "../components/SearchBar";
-import Button from "../components/Button";
+import SearchButton from "../components/SearchButton";
 import API from "../utils/API";
 import SearchedBooks from "../components/SearchedBooks";
+import Header from "../components/Header";
 
 function Search(){
     const[books, setBooks] = useState([]);
@@ -25,12 +26,13 @@ function Search(){
 
     return(
     <div>
+    <Header />
     <div className="block p-4 border-4">
             <SearchBar
                 value={bookSearch}
                 onChange={handleInputChange}
             />
-            <Button className="object-center"
+            <SearchButton className="object-center"
                 onClick={handleSearch}
             />
     </div>

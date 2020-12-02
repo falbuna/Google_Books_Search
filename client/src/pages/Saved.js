@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 import SavedBooks from "../components/SavedBooks";
+import Header from "../components/Header";
 
 function Saved(){
 
@@ -25,7 +26,8 @@ function Saved(){
     }
 
     return(
-
+  <div>
+    <Header />
     <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
       <div className="space-y-12 lg:grid lg:grid-cols-1 lg:gap-8 lg:space-y-0">
         <div className="space-y-5 sm:space-y-4">
@@ -46,7 +48,7 @@ function Saved(){
         </div>
       </div>
     </div>
-
+</div>
 )
 }
 
