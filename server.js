@@ -1,7 +1,7 @@
 const express = require("express");
 
 const routes = require("./routes")
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 const app = express();
 const mongoose = require("mongoose");
 
@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks",
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://falbuna:ayanami1@cluster0.une49.mongodb.net/googlebooks?retryWrites=true&w=majority",
 {
   useNewUrlParser: true,
   useFindAndModify: false,
