@@ -9,9 +9,9 @@
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "seed": "node scripts/seedDB.js",
-    "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "install": "cd client && npm install",
+    "heroku-postbuild": "npm run install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -29,7 +29,6 @@
   "homepage": "https://github.com/falbuna/Google_Books_Search#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.10.17",
-    "serve": "^11.3.2"
+    "mongoose": "^5.10.17"
   }
 }
