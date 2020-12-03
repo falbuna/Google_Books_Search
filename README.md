@@ -21,13 +21,15 @@ The application was built using MERN (MongoDB, Express, React, Node) to display 
 
 When the user first loads up the application, this is what they will see.
 
-![]()
+![The initial page for Google Books Search.](https://github.com/falbuna/Google_Books_Search/blob/master/assets/01_Initial.png)
 
 To search for a book, type in the title of the book you are looking for and click the Search button. The user will then be given a list of books. Pressing view will open a new tab that will go to the book in Google Books. Pressing save will save the book to the saved page. Pressing Saved in the navigation bar at the top of the page will send the user to the saved books page.
 
-![]()
+![Searching for a book in the search bar.](https://github.com/falbuna/Google_Books_Search/blob/master/assets/02_Search.png)
 
 On the saved page, the user will be able to view all of the books that they saved in the search page. Pressing Delete will remove from the page. To search for new books to add to the page, the user can click Search in the nav bar on the top of the page.
+
+![Saved books.](https://github.com/falbuna/Google_Books_Search/blob/master/assets/03_Saved.png)
 
 ## Questions
 
