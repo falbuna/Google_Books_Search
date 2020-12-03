@@ -21,7 +21,7 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^4.1.0",
-    "nodemon": "^1.18.7"
+    "nodemon": "^1.19.4"
   },
   "bugs": {
     "url": "https://github.com/falbuna/Google_Books_Search/issues"
