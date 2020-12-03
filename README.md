@@ -27,7 +27,7 @@ To search for a book, type in the title of the book you are looking for and clic
 
 ![Searching for a book in the search bar.](https://github.com/falbuna/Google_Books_Search/blob/master/assets/02_Search.png)
 
-On the saved page, the user will be able to view all of the books that they saved in the search page. Pressing Delete will remove from the page. To search for new books to add to the page, the user can click Search in the nav bar on the top of the page.
+On the Saved page, the user will be able to view all of the books that they saved in the Search page. Pressing Delete will remove the book from the Saved page. To search for new books to add to the page, the user can click Search in the nav bar on the top of the page.
 
 ![Saved books.](https://github.com/falbuna/Google_Books_Search/blob/master/assets/03_Saved.png)
 
