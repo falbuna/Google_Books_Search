@@ -6,6 +6,7 @@ import SearchedBooks from "../components/SearchedBooks";
 import Header from "../components/Header";
 
 function Search(){
+
     const[books, setBooks] = useState([]);
     const[bookSearch, setBookSearch] = useState("");
     
@@ -18,7 +19,8 @@ function Search(){
     const handleSearch = event => {
         event.preventDefault();
         API.search(bookSearch)
-        .then(res => { setBooks(res.data.items)
+        .then(res => {console.log(res.data.items) 
+            setBooks(res.data.items)
         })
         .catch(err => console.log(err));
     }
@@ -48,6 +50,7 @@ function Search(){
             ) : (
             <div>
             {books.map((book, index) => {
+                console.log(books[0])
                 return(
                     <SearchedBooks 
                         book={book}
