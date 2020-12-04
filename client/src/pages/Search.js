@@ -50,7 +50,6 @@ function Search(){
             ) : (
             <div>
             {books.map((book, index) => {
-                console.log(books[0])
                 return(
                     <SearchedBooks 
                         book={book}

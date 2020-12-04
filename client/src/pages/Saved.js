@@ -15,7 +15,6 @@ function Saved() {
   function loadBooks() {
     API.getBooks()
       .then(res => {
-        console.log(res.data)
         setBooks(res.data)
       })
       .catch(err => console.log(err));
@@ -36,7 +35,6 @@ function Saved() {
             {books.length ? (
               <div>
                 { books.map(book => (
-                  // console.log(book)
                   <SavedBooks
                     book={book}
                     key={book._id}
