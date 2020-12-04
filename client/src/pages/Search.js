@@ -19,7 +19,7 @@ function Search(){
     const handleSearch = event => {
         event.preventDefault();
         API.search(bookSearch)
-        .then(res => {console.log(res.data.items) 
+        .then(res => {
             setBooks(res.data.items)
         })
         .catch(err => console.log(err));
