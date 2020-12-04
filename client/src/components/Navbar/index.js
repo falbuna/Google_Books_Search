@@ -10,7 +10,7 @@ function Navbar(){
         <div className="flex-shrink-0 flex items-center">
 
         </div>
-        <div className="hidden sm:block sm:ml-6">
+        <div className="sm:block sm:ml-6">
           <div className="flex items-center justify-center space-x-4">
           <div className="px-3 py-2 rounded-md text-sm font-medium leading-5 text-white bg-blue-600 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Google Books</div>
             <a href="/search" className="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-white hover:bg-blue-700">Search</a>
